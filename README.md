@@ -21,13 +21,13 @@ let regexp = new RegExp(/ab+c/, 'i') // constructor with regular expression lite
 | \d         | 	A digit (same as [0-9])                     |
 | \D         | 	A non-digit (same as [^0-9])                |
 | \w	        | A word character (same as [_a-zA-Z0-9])      |
- | \W	        | A non-word character (same as [^_a-zA-Z0-9]) |
- | \s	        | A whitespace character                       |
- | \S	        | A non-whitespace character                   |
- | \b	        | A word boundary                              |
+| \W	        | A non-word character (same as [^_a-zA-Z0-9]) |
+| \s	        | A whitespace character                       |
+| \S	        | A non-whitespace character                   |
+| \b	        | A word boundary                              |
 | \B	        | A non-word boundary                          |
 | \n	        | A newline                                    |
- | \t	        | A tab                                        |
+| \t	        | A tab                                        |
 | a &#x7c; b | a or b                                       |
 | a?         | Zero or one a's (greedy)                     |
 | a??        | Zero or one a's (lazy)                       |
@@ -45,8 +45,8 @@ let regexp = new RegExp(/ab+c/, 'i') // constructor with regular expression lite
 |  \cY	      | The control character with the hex code Y    |
 | \xYY	      | The character with the hex code YY           |
 | \uYYYY	    | The character with the hex code YYYY         |
- | .	         | Any character                                |
- | \Y         | 	The Y'th captured group                     |
+| .	         | Any character                                |
+| \Y         | 	The Y'th captured group                     |
 
 
 ### Simple RegExp examples 
@@ -86,6 +86,14 @@ function stripCommeпts(code){
 };
 console.log(stripCommeпts("1 /* а */+/* b */ 1"));
 console.log(stripCommeпts("1 + 1 //a+b"));
+```
+
+- Replace single qoute with double:
+```javascript
+let regexp = /(^|\W)'|'(\W|$)/g;
+let text = "'I'm the cook,' he said, 'it's my job.'";
+
+console.log(text.replace(regexp, '$1"$2'));
 ```
 
 > More functions can be found in *regexp.js* file.
