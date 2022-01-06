@@ -1,3 +1,8 @@
+function verifyRegExp(regexp, str){
+    return regexp.test(str);
+}
+
+
 function isFirstUpperCase(s){
     // Check if the first character is uppercase
     let re = /^[A-Z]/;
@@ -19,6 +24,18 @@ function isAlphaNumeric(s) {
     return re.test(s)
 }
 // console.log(isAlphaNumeric("123fv"))
+
+
+function isNumber(s){
+    // Check whether a given value is a number
+    let re = /^[+\-]?(\d+(\.\d*)?|\.\d+)([eE][+\-]?\d+)?$/;
+    return re.test(s);
+}
+let nums = ["1a", "+-1", "1.2.3", "+15", "1.55", ".5", "5.", "1.3e2", "1E-4"];
+for(let str of nums){
+    console.log(isNumber(str))
+}
+
 
 function changeFormat(s){
     // change string from 'Firstname, Lastname' to 'Lastname FirstName'
@@ -43,12 +60,20 @@ function isHtml(s){
 // console.log(isHtml("<div>some text</div>"))
 // console.log(isHtml("some text</div>"))
 
+
 function removeComments(code){
     // Remove comments from code
     return code.replace(/\/\/.*|\/\*[^]*?\*\//g, "");
 };
 // console.log(removeComments("1 /* а */+/* Ь */ 1"));
 // console.log(removeComments("1 + 1 //a+b"));
+
+
+function replaceQuotes(s){
+    // Replace single quotes with double where needed
+    return s.replace(/(^|\W)'|'(\W|$)/g, '$1"$2')
+}
+// console.log(replaceQuotes("'I'm the cook,' he said, 'it's my job.'"));
 
 
 function thousands_separators(num, separator){
