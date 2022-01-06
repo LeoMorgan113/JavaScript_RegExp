@@ -78,7 +78,6 @@ console.log(regexp.test("#00F"))
 - Add thousands separators:
 ```javascript
 function thousands_separators(num, separator){
-    // Return value with thousands separators
     let value = num.toString().split('.');
     value[0] = value[0].replace(/\B(?=(\d{3})+(?!\d))/g, separator);
     return value.join(".");
