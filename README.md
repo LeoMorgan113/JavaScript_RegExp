@@ -77,12 +77,12 @@ console.log(regexp.test("#00F"))
 
 - Add thousands separators:
 ```javascript
-function thousands_separators(s){
-    let num = s.toString().split('.');
-    num[0] = num[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return num.join(".");
+function thousands_separators(num, separator){
+    let value = num.toString().split('.');
+    value[0] = value[0].replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+    return value.join(".");
 }
-console.log(thousands_separators(10000))
+console.log(thousands_separators(10000, ","))
 ```
 
 - Delete comment from code:
