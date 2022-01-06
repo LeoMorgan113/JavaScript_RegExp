@@ -51,7 +51,7 @@ let regexp = new RegExp(/ab+c/, 'i') // constructor with regular expression lite
 
 ### Simple RegExp examples 
 
-- Check does string contain data(format: XX/XX/XXXX):
+- Check does string contain date(format: XX/XX/XXXX):
 ```javascript
 let regexp = /(1[0-2]|0?[1-9])\/(3[01]|[12][0-9]|0?[1-9])\/(?:[0-9]{2})?[0-9]{2}$/;
 console.log(regexp.test('Albert Einstein was born in Ulm, on 14/03/2019'))
