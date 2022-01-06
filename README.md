@@ -57,6 +57,12 @@ let regexp = /(1[0-2]|0?[1-9])\/(3[01]|[12][0-9]|0?[1-9])\/(?:[0-9]{2})?[0-9]{2}
 console.log(regexp.test('Albert Einstein was born in Ulm, on 14/03/2019'))
 ```
 
+- Check is string a time(format: XX:XX:XX):
+```javascript
+let regexp = /^([01]?[0-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])$/;
+console.log(regexp.test('12:38:01'))
+```
+
 - Pattern that matches e-mail addresses:
 ```javascript
 let regexp = /^[A-Z|a-z]+[0-9]*?[!#@\$%&\+-\/=\?\^_`\{\|\}~]+[A-Z|a-z]+[0-9]*?.\w{2,3}/
